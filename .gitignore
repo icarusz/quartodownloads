@@ -1,3 +1,4 @@
 /.quarto/
 downloads.html
 downloads_files/*
+renv.lock

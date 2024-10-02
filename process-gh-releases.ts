@@ -115,10 +115,12 @@ let downloadRecordArray = Object.entries(downloadRecord).map(([date, downloads])
     const entries = Object.entries(downloads);
     let v14 = entries.filter(([key, value]) => key.startsWith("v1.4")).reduce((acc, [key, value]) => acc + value, 0);
     let v15 = entries.filter(([key, value]) => key.startsWith("v1.5")).reduce((acc, [key, value]) => acc + value, 0);
+    let v16 = entries.filter(([key, value]) => key.startsWith("v1.6")).reduce((acc, [key, value]) => acc + value, 0);
     return {
         date,
         v14,
         v15,
+        v16,
         // ...downloads
     };
 }).toSorted((a, b) => a.date.localeCompare(b.date));
@@ -127,4 +129,5 @@ console.log("date,version,downloads");
 for (const entry of downloadRecordArray) {
     console.log(`${entry.date},v14,${entry.v14}`);
     console.log(`${entry.date},v15,${entry.v15}`);
+    console.log(`${entry.date},v16,${entry.v16}`);
 }
